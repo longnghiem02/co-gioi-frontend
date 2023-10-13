@@ -1,0 +1,53 @@
+@import 'src/common/styles/variables';
+
+.nav {
+  width           : $nav-width;
+  height          : $nav-height;
+  position        : fixed;
+  bottom          : 0;
+  transition      : bottom 0.3s;
+  background-color: $bg-color-bar;
+  box-shadow      : rgb(0 0 0 / 12%) 0px -5px 10px;
+
+  &.show {
+    bottom: 0;
+  }
+
+  &.hide {
+    bottom: $header-height-hide;
+  }
+
+  .nav-wrapper {
+    max-width      : $content-width;
+    margin         : auto;
+    display        : flex;
+    justify-content: space-between;
+
+    .nav-left {
+      display: flex;
+    }
+
+    .nav-right {
+      display: flex;
+    }
+  }
+}
+
+.nav-item {
+  width          : $nav-item-width;
+  height         : $nav-height;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  color          : $text-color-bar;
+
+  &:hover {
+    cursor          : pointer;
+    background-color: $bar-item-hover-color;
+  }
+
+  &.active {
+    color: $text-color-bar-active;
+  }
+}

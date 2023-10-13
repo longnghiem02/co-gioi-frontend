@@ -1,0 +1,67 @@
+@import 'src/common/styles/variables';
+
+.header {
+  width           : $header-width;
+  height          : $header-height;
+  position        : sticky;
+  top             : 0;
+  transition      : top 0.3s;
+  background-color: $bg-color-bar;
+  box-shadow      : rgb(0 0 0 / 12%) 0px 5px 10px;
+
+  &.show {
+    top: 0
+  }
+
+  &.hide {
+    top: $header-height-hide;
+  }
+
+  .header-wrapper {
+    max-width  : $content-width;
+    height     : $header-height;
+    margin     : auto;
+    display    : flex;
+    align-items: center;
+    position   : relative;
+
+    .left-content {
+      width          : $header-left-width;
+      padding-left: 10px;
+      display        : flex;
+      justify-content: left;
+    }
+
+    .center-content {
+      width          : $header-center-width;
+      display        : flex;
+      justify-content: center;
+    }
+
+    .right-content {
+      width          : $header-right-width;
+      padding-right: 10px;
+      display        : flex;
+      justify-content: right;
+    }
+
+    .left-content,
+    .right-content {
+      .header-btn {
+        width          : $header-btn-width;
+        height         : $header-btn-height;
+        border         : 2px solid black;
+        border-radius  : 3px;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        font-size      : $header-btn-font-size;
+
+        &:hover {
+          cursor          : pointer;
+          background-color: $bar-item-hover-color;
+        }
+      }
+    }
+  }
+}

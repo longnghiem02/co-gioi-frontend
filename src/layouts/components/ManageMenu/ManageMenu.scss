@@ -1,0 +1,49 @@
+@import 'src/common/styles/_variables.scss';
+
+.manage-menu {
+  width           : 300px;
+  height          : 500px;
+  position        : absolute;
+  top             : $header-height;
+  left            : 0;
+  background-color: $bg-color-bar;
+
+  .manage-menu-header {
+    height         : $manage-menu-header-height;
+    padding        : 0 10px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+    .manage-menu-title {
+      font-size  : 20px;
+      font-weight: 600;
+    }
+  }
+}
+
+
+.manage-menu-item {
+  height      : $manage-menu-item-height;
+  padding-left: 10px;
+  display     : flex;
+  align-items : center;
+  color       : $text-color;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.manage-menu-child-item {
+  height      : $manage-menu-item-height;
+  padding-left: 20px;
+  display     : flex;
+  align-items : center;
+  color       : $text-color;
+
+  &.active {
+    color       : $text-color-bar-active;
+    border-right: 5px solid $text-color-bar-active;
+  }
+}

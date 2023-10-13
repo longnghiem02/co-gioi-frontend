@@ -1,0 +1,83 @@
+// Content
+$content-width: 950px;
+
+// Header
+$header-width      : 100%;
+$header-height     : 50px;
+$header-height-hide: -50px;
+
+$header-left-width  : calc($content-width / 100 * 25);
+$header-center-width: calc($content-width / 100 * 50);
+$header-right-width : calc($content-width / 100 * 25);
+
+$header-btn-width    : 32px;
+$header-btn-height   : 32px;
+$header-btn-font-size: 24px;
+
+// Loading
+$loading-width : 70px;
+$loading-height: 70px;
+$loading-color : #2272FF;
+
+// Nav
+$nav-width      : 100%;
+$nav-height     : 50px;
+$nav-height-hide: -50px;
+// Nav item
+$nav-item-width : calc(($content-width - $loading-width) / 4);
+
+// Nav item color
+$bar-item-hover-color: #ccc;
+
+// button
+$button-width : 400px;
+// button color
+
+
+//
+$content-min-height       : calc(100vh - $header-height - $nav-height);
+$content-inside-width     : calc($content-width - 40px);
+$content-inside-min-height: calc($content-min-height - 40px);
+
+// Category item
+$category-item-width    : calc(100% / 5);
+$category-item-height   : 150px;
+$category-item-img-width: 90px;
+
+// Result nav
+$result-nav-height: 40px;
+
+// Result nav item
+$result-nav-item-width     : calc($content-inside-width / 3);
+$result-nav-item-height    : 35px;
+$result-nav-item-font-size : 18px;
+
+// Result
+$result-header-font-size: 24px;
+
+// Manage menu
+$manage-menu-header-height: 40px;
+$manage-menu-item-height: 30px;
+
+$manage-title-font-size: 24px;
+
+// Font size
+$default-font-size: 16px;
+
+// Text color
+$text-color           : #000;
+$text-color-bar       : #777;
+$text-color-bar-active: #000;
+
+
+// Background color
+$bg-color      : #fff;
+$bg-color-bar  : #eee;
+$bg-color-hover: #eee;
+
+
+// form
+$form-width          : 400px;
+$form-height         : 600px;
+$form-title-font-size: 50px;
+$form-button-width   : 250px;

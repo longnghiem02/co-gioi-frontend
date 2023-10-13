@@ -1,0 +1,24 @@
+@import 'src/common/styles/variables';
+
+.manage {
+  width          : $content-inside-width;
+  height         : $content-inside-min-height;
+  display        : flex;
+  flex-direction : column;
+  justify-content: flex-start;
+
+  .manage-title {
+    margin-bottom  : 15px;
+    display        : flex;
+    justify-content: center;
+    font-size      : $manage-title-font-size;
+    font-weight    : 600;
+    text-transform : uppercase;
+  }
+
+  .manage-content {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+  }
+}

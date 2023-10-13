@@ -1,0 +1,17 @@
+@import 'src/common/styles/variables';
+
+.wrapper {
+
+  .container {
+    max-width: $content-width;
+    margin         : 0 auto $nav-height;
+
+    .content {
+      min-height     : $content-min-height;
+      padding        : 15px 20px 25px;
+      display        : flex;
+      justify-content: center;
+      align-items    : center;
+    }
+  }
+}

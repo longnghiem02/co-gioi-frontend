@@ -1,0 +1,48 @@
+@import 'src/common/styles/variables';
+
+.result {
+  width          : $content-inside-width;
+  height         : $content-inside-min-height;
+  display        : flex;
+  flex-direction : column;
+  justify-content: flex-start;
+
+  .result-title {
+    margin-bottom  : 15px;
+    display        : flex;
+    justify-content: center;
+    font-size      : $result-header-font-size;
+    font-weight    : 600;
+    text-transform : uppercase;
+  }
+
+  .result-nav {
+    height         : $result-nav-height;
+    display        : flex;
+    justify-content: space-between;
+
+    .sub-nav-item {
+      width          : $result-nav-item-width;
+      height         : $result-nav-item-height;
+      display        : flex;
+      justify-content: center;
+      align-items    : center;
+      font-size      : $result-nav-item-font-size;
+      color          : $text-color-bar;
+
+      &:hover {
+        cursor          : pointer;
+        background-color: $bg-color-hover;
+      }
+
+      &.active {
+        color: $text-color-bar-active;
+      }
+    }
+  }
+
+  .result-content {
+    display        : flex;
+    justify-content: center;
+  }
+}

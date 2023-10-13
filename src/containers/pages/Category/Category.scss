@@ -1,0 +1,34 @@
+@import 'src/common/styles/variables';
+
+.category {
+  width          : 100%;
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: center;
+  gap            : 30px;
+}
+
+.category-item {
+  width: $category-item-width;
+
+  a {
+    height         : $category-item-height;
+    padding        : 10px 5px;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    align-items    : center;
+    border         : 2px solid #000;
+    border-radius  : 5px;
+    font-weight    : 600;
+
+    img {
+      width: $category-item-img-width;
+    }
+
+    &:hover {
+      cursor          : pointer;
+      background-color: $bg-color-hover;
+    }
+  }
+}
