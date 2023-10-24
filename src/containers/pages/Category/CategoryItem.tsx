@@ -7,7 +7,7 @@ function CategoryItem({ data }: any) {
 		<div className="category-item">
 			<Link to={data.path}>
 				<img src={data.icon} alt="" />
-				{data.title}
+				<span>{data.title}</span>
 			</Link>
 		</div>
 	);

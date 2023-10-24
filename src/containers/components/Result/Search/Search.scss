@@ -1,0 +1,43 @@
+@import 'src/common/styles/_variables.scss';
+
+.item-search {
+  display: flex;
+
+  input {
+    margin-right : 10px;
+    padding      : 0 5px;
+    border-bottom: 1px solid #000;
+    font-size    : $default-font-size;
+  }
+
+  .search-btn {
+    width          : 40px;
+    height         : 30px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    border-radius  : 50px;
+
+    &:hover {
+      cursor          : pointer;
+      background-color: $bg-color-hover;
+    }
+  }
+}
+
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .item-search {
+    width: $content-inside-width-mobile;
+
+    input {
+      width: 100%;
+      font-size: 18px;
+    }
+  }
+}

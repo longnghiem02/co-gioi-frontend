@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import ResultData from '../ResultData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useAppDispatch } from '../../../../store/hooks';
-import { setItemData, setPageItemList, setSearchValue } from '../../../../store/app/slices';
-import './Search.scss'
+import { setSearchValue } from '../../../../store/app/slices';
+import './ManageBar.scss';
 
-function Search(props: any) {
+function ManageBar(props: any) {
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
 		return () => {
 			dispatch(setSearchValue(''));
-			dispatch(setItemData(null));
-			dispatch(setPageItemList(null));
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const [inputValue, setInputValue] = useState('');
@@ -28,17 +25,31 @@ function Search(props: any) {
 		await props.search({ take: 10, page: 1, name: inputValue });
 	};
 
+	const handleRefresh = () => {
+		setInputValue('');
+		dispatch(setSearchValue(''));
+		props.getAll({ take: 10, page: 1 });
+	};
+
 	return (
-		<>
-			<div className="item-search">
+		<div className="manage-bar">
+			<div className="manage-search">
 				<input type="text" placeholder="Search" value={inputValue} onChange={(e) => handleChangeInputValue(e)} />
 				<div className="search-btn" onClick={() => handleSearch()}>
 					<FontAwesomeIcon icon={faMagnifyingGlass} />
 				</div>
 			</div>
-			<ResultData search={props.search} />
-		</>
+			<div className="manage-btn">Add</div>
+			<div
+				className="manage-btn"
+				onClick={() => {
+					handleRefresh();
+				}}
+			>
+				Refresh
+			</div>
+		</div>
 	);
 }
 
-export default Search;
+export default ManageBar;

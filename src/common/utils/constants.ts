@@ -34,6 +34,19 @@ export const CATEGORY_ITEM_PATH = {
 	OTHER_INFO: '/category/other-info',
 };
 
+export const CATEGORY_ITEM_DATA_PATH = {
+	CHARACTER: '/category/character/:id',
+	PATH: '/category/path/:id',
+	GU: '/category/gu/:id',
+	GU_HOUSE: '/category/gu-house/:id',
+	GU_FORMATION: '/category/gu-formation/:id',
+	KILLER_MOVE: '/category/killer-move/:id',
+	BEAST: '/category/beast/:id',
+	BLAND_GHEAVEN: '/category/bland-gheaven/:id',
+	SECLUDED_DOMAIN: '/category/seculed-domain/:id',
+	OTHER_INFO: '/category/other-info/:id',
+};
+
 export const MANAGE_MENU_ITEM_TITLE = {
 	ACCOUNT: 'Tài khoản',
 	NOVEL: 'Tiểu thuyết',

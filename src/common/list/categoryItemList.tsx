@@ -13,7 +13,7 @@ const categoryItemList = [
 		path: CATEGORY_ITEM_PATH.PATH,
 	},
 	{
-		icon: images.cicada,
+		icon: images.gu,
 		title: CATEGORY_ITEM_TITLE.GU,
 		path: CATEGORY_ITEM_PATH.GU,
 	},

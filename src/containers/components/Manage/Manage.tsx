@@ -1,18 +1,18 @@
 import React from 'react';
 import ManageTable from './ManageTable';
-import ManageOption from './ManageOption';
+import ManageBar from './ManageBar';
 import './Manage.scss';
+import Paginate from '../Paginate';
 
-function Manage(props: any) {
+function ManageContent(props: any) {
 	return (
-		<div className="manage">
-			<div className="manage-title">{props.title}</div>
+
 			<div className="manage-content">
-        <ManageOption getAll={props.getAll} search={props.search} />
-        <ManageTable />
+        <ManageBar getAll={props.getAll} search={props.search} />
+        <ManageTable getAll={props.getAll} />
+				<Paginate getAll={props.getAll} search={props.search} />
 			</div>
-		</div>
 	);
 }
 
-export default Manage;
+export default ManageContent;

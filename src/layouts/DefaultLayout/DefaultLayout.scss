@@ -4,14 +4,33 @@
 
   .container {
     max-width: $content-width;
-    margin         : 0 auto $nav-height;
+    margin   : $header-height auto $loading-height;
 
     .content {
-      min-height     : $content-min-height;
-      padding        : 15px 20px 25px;
+      height         : $content-height;
+      padding        : $content-padding-top $content-padding-side $content-padding-bottom;
       display        : flex;
       justify-content: center;
-      align-items    : center;
+    }
+  }
+}
+
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .container {
+    max-width: unset !important;
+    width    : $content-width-mobile;
+    margin   : $header-height-mobile auto $loading-height-mobile !important;
+
+    .content {
+      width  : $content-width-mobile;
+      height : $content-height-mobile !important;
+      padding: $content-padding-top-mobile $content-padding-side-mobile $content-padding-bottom-mobile !important;
     }
   }
 }

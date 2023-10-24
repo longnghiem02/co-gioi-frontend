@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import { selectPageItemList } from '../../../../store/app/selectors';
+import { selectPageItemListData } from '../../../../store/app/selectors';
 import './ManageTable.scss';
 
 function ManageTable(props: any) {
-	const pageItemList = useSelector(selectPageItemList);
+	useEffect(() => {
+		props.getAll({ take: 10, page: 1 });
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+	
+	const pageItemListData = useSelector(selectPageItemListData);
 
 	return (
 		<div className="manage-table">
@@ -18,10 +23,9 @@ function ManageTable(props: any) {
 					</div>
 				</div>
 				<div className="table-body">
-					{pageItemList &&
-						pageItemList.data &&
-						pageItemList.data.length > 0 &&
-						pageItemList.data.map((item: {name: string}, index: any) => {
+					{pageItemListData &&
+						pageItemListData.length > 0 &&
+						pageItemListData.map((item: { name: string }, index: any) => {
 							return (
 								<div className="table-row" key={index}>
 									<div className="name-column">{item.name}</div>

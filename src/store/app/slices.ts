@@ -1,37 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { ItemData, defaultItemData } from '../../common/interface/ItemData.interface';
+import { PageItemList, defaultPageItemList } from '../../common/interface/PageItemList.interface';
 import type { RootState } from '../index';
 
 interface AppState {
 	loading: boolean;
 	manageMenu: boolean;
-	pageItemList: {
-		data: [];
-		meta: {
-			totalItem: number;
-			itemPerPage: number;
-			totalPage: number;
-			currentPage: number;
-			hasPreviousPage: boolean;
-			hasNextPage: boolean;
-		};
-	};
+	pageItemList: PageItemList;
+	searchValue: string;
+	itemData: ItemData;
 }
 
 const initialState: AppState = {
 	loading: false,
 	manageMenu: false,
-	pageItemList: {
-		data: [],
-		meta: {
-			totalItem: 0,
-			itemPerPage: 0,
-			totalPage: 0,
-			currentPage: 0,
-			hasPreviousPage: false,
-			hasNextPage: false,
-		},
-	},
+	pageItemList: defaultPageItemList,
+	searchValue: '',
+	itemData: defaultItemData,
 };
 
 export const appSlice = createSlice({
@@ -47,14 +33,20 @@ export const appSlice = createSlice({
 		setPageItemList: (state, action) => {
 			state.pageItemList = action.payload;
 		},
+		setSearchValue: (state, action) => {
+			state.searchValue = action.payload;
+		},
+		setItemData: (state, action) => {
+			state.itemData = action.payload;
+		},
 	},
 });
 
-export const { setLoadingState, setManageMenuState, setPageItemList } = appSlice.actions;
+export const { setLoadingState, setManageMenuState, setPageItemList, setSearchValue, setItemData } = appSlice.actions;
 
 export const appPersistConfig = {
 	key: 'app',
-	whitelist: ['pageItemList'],
+	whitelist: [],
 };
 
 export const selectApp = (state: RootState) => state.app;

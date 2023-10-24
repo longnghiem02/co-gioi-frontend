@@ -11,7 +11,7 @@ html {
   font-size     : 62.5%;
   font-family   : Nunito, sans-serif;
   // font-family: Poppins,sans-serif;
-  user-select: none;
+  user-select   : none;
 
   &::-webkit-scrollbar {
     border-radius: 0;
@@ -35,20 +35,59 @@ body {
   text-rendering  : optimizeSpeed;
   color           : $text-color;
   background-color: $bg-color;
-  overflow-y      : overlay;
+  overflow-y      : hidden;
+  overflow-x      : hidden;
 }
 
 a {
   text-decoration: none;
-  color: $text-color;
+  color          : $text-color;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 input {
-  outline: none;
-  border: none;
+  outline    : none;
+  border     : none;
+  line-height: 1.5;
+}
+
+textarea {
+  resize: none;
+  outline    : none;
+
+  &::-webkit-scrollbar {
+    border-radius: 0;
+    width        : 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius   : 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius   : 0;
+    background-color: rgba(0, 0, 0, 0);
+  }
 }
 
 button {
-  border: none;
+  border          : none;
   background-color: unset;
+}
+
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  body {
+    font-size: 1.8rem;
+  }
 }

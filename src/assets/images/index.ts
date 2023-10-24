@@ -1,7 +1,7 @@
 const images = {
   loading: require('./enso.svg').default,
   character: require('./category/character.svg').default,
-  cicada: require('./category/cicada.svg').default,
+  gu: require('./category/gu.svg').default,
   dragon: require('./category/dragon.svg').default,
   hand: require('./category/hand.svg').default,
   galaxy: require('./category/galaxy.svg').default,

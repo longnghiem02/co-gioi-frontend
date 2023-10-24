@@ -5,17 +5,8 @@
   height          : $nav-height;
   position        : fixed;
   bottom          : 0;
-  transition      : bottom 0.3s;
   background-color: $bg-color-bar;
   box-shadow      : rgb(0 0 0 / 12%) 0px -5px 10px;
-
-  &.show {
-    bottom: 0;
-  }
-
-  &.hide {
-    bottom: $header-height-hide;
-  }
 
   .nav-wrapper {
     max-width      : $content-width;
@@ -49,5 +40,31 @@
 
   &.active {
     color: $text-color-bar-active;
+  }
+}
+
+// Tablet
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+  .nav {
+    width : $nav-width-tablet;
+    height: $nav-height-tablet;
+  }
+
+  .nav-item {
+    width : $nav-item-width-tablet;
+    height: $nav-height-tablet;
+  }
+}
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .nav {
+    width : $nav-width-mobile;
+    height: $nav-height-mobile;
+  }
+
+  .nav-item {
+    width : $nav-item-width-mobile;
+    height: $nav-height-mobile;
   }
 }

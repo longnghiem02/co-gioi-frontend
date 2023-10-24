@@ -1,15 +1,17 @@
 @import 'src/common/styles/variables';
 
 .sign-option {
-  width         : 400px;
-  margin        : auto;
-  display       : flex;
-  flex-direction: column;
-  align-items   : center;
-  gap           : 50px;
+  width          : 400px;
+  height         : $content-height;
+  margin         : auto;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  gap            : 50px;
 
   .button {
-    width        : $button-width;
+    width        : $sign-button-width;
     padding      : 10px 0;
     text-align   : center;
     border       : 2px solid #000;
@@ -22,6 +24,23 @@
     &:hover {
       cursor          : pointer;
       background-color: $bg-color-hover;
+    }
+  }
+}
+
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .sign-option {
+    width : $content-width-mobile;
+    height: $content-height-mobile;
+
+    .button {
+      width: $sign-button-width-mobile;
     }
   }
 }

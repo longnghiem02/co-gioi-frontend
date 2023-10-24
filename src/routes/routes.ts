@@ -1,4 +1,4 @@
-import { PATH, CATEGORY_ITEM_PATH, MANAGE_MENU_ITEM_PATH } from '../common/utils';
+import { PATH, CATEGORY_ITEM_PATH, MANAGE_MENU_ITEM_PATH, CATEGORY_ITEM_DATA_PATH } from '../common/utils';
 
 // Layouts
 import DefaultLayout from '../layouts/DefaultLayout';
@@ -23,6 +23,9 @@ import KillerMove from '../containers/category-pages/KillerMove';
 import SecludedDomain from '../containers/category-pages/SecludedDomain';
 import OtherInfo from '../containers/category-pages/OtherInfo';
 
+//
+import PathData from '../containers/category-pages/Path/PathItemData/PathData';
+
 // Manage pages
 import ManageAccount from '../containers/manage-pages/ManageAccount';
 import ManagePath from '../containers/manage-pages/ManagePath';
@@ -46,6 +49,8 @@ const guestRoutes = [
 	{ path: CATEGORY_ITEM_PATH.PATH, page: Path, layout: DefaultLayout },
 	{ path: CATEGORY_ITEM_PATH.SECLUDED_DOMAIN, page: SecludedDomain, layout: DefaultLayout },
 	{ path: CATEGORY_ITEM_PATH.OTHER_INFO, page: OtherInfo, layout: DefaultLayout },
+
+	{ path: CATEGORY_ITEM_DATA_PATH.PATH, page: PathData, layout: DefaultLayout },
 
 	{ path: MANAGE_MENU_ITEM_PATH.ACCOUNT, page: ManageAccount, layout: DefaultLayout },
 	{ path: MANAGE_MENU_ITEM_PATH.PATH, page: ManagePath, layout: DefaultLayout },

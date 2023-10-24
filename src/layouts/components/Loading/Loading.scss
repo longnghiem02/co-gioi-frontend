@@ -36,3 +36,11 @@
     }
   }
 }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .loading {
+    width           : $loading-width-mobile;
+    height          : $loading-height-mobile;
+  }
+}

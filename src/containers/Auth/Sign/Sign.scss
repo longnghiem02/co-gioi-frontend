@@ -3,12 +3,11 @@
 .form {
   width          : $form-width;
   height         : $form-height;
-  padding        : 20px 40px;
+  padding        : 20px 20px;
   display        : flex;
   flex-direction : column;
   justify-content: space-between;
   align-items    : center;
-  border         : 1px solid #000;
 
   .form-title {
     font-size : $form-title-font-size;
@@ -29,6 +28,8 @@
 
       label {
         padding: 0 5px;
+        font-size: 20px;
+        font-weight: 400;
       }
 
       .input-row {
@@ -95,5 +96,18 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .form {
+    width          : $form-width-mobile;
+    height         : $form-height-mobile;
   }
 }

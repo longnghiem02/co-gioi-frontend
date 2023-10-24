@@ -6,19 +6,120 @@
   display        : flex;
   flex-direction : column;
   justify-content: flex-start;
+  align-items    : center;
 
   .manage-title {
-    margin-bottom  : 15px;
-    display        : flex;
-    justify-content: center;
-    font-size      : $manage-title-font-size;
-    font-weight    : 600;
-    text-transform : uppercase;
+    margin-bottom : 30px;
+    font-size     : $manage-title-font-size;
+    font-weight   : 600;
+    text-transform: uppercase;
   }
 
   .manage-content {
+    height        : 100%;
     display       : flex;
     flex-direction: column;
     align-items   : center;
+    gap           : 20px;
+  }
+
+  .manage-form {
+    width         : 400px;
+    height        : 450px;
+    padding       : 20px 15px;
+    display       : flex;
+    flex-direction: column;
+    gap           : 15px;
+    border-radius : 5px;
+    border        : 2px solid #000;
+
+    &::-webkit-scrollbar {
+      border-radius: 0;
+      width        : 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius   : 4px;
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius   : 0;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    .input-section {
+      width  : 100%;
+      display: flex;
+      gap    : 5px;
+
+      input {
+        width        : 100%;
+        padding      : 0 25px 0 5px;
+        font-size    : 18px;
+        color        : #000;
+        border-bottom: 1px solid #999;
+
+        &:focus {
+          border-bottom: 1px solid #000;
+        }
+
+        &:not(:placeholder-shown) {
+          border-bottom: 1px solid #000;
+        }
+      }
+    }
+
+    .input-section-area {
+      display       : flex;
+      flex-direction: column;
+
+      textarea {
+        width        : 100%;
+        height       : 250px;
+        border-radius: 3px;
+        font-size    : 18px;
+
+        &:focus {
+          border: 1px solid #000;
+        }
+      }
+    }
+  }
+
+  .manage-option {
+    width          : 400px;
+    margin-top     : 30px;
+    display        : flex;
+    justify-content: space-evenly;
+
+    .manage-btn {
+      width          : 80px;
+      height         : 30px;
+      display        : flex;
+      justify-content: center;
+      align-items    : center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.add,
+      &.save {
+        background-color: aqua;
+      }
+
+      &.edit {
+        background-color: orange;
+      }
+
+      &.delete {
+        background-color: red;
+      }
+
+      &.cancel {
+        background-color: grey;
+      }
+    }
   }
 }
