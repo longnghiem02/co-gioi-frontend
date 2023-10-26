@@ -1,7 +1,7 @@
 const images = {
   loading: require('./enso.svg').default,
   character: require('./category/character.svg').default,
-  gu: require('./category/gu.svg').default,
+  butterfly: require('./category/butterfly.svg').default,
   dragon: require('./category/dragon.svg').default,
   hand: require('./category/hand.svg').default,
   galaxy: require('./category/galaxy.svg').default,
@@ -10,7 +10,7 @@ const images = {
   tower: require('./category/tower.svg').default,
   abstract: require('./category/abstract.svg').default,
   other: require('./category/other.svg').default,
-  // noUserAvatar: require('./no-user-avatar.jpg'),
+  noImage: require('./no-image.jpg'),
 };
 
 export default images;

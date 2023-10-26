@@ -8,9 +8,19 @@ export const selectLoadingState = createSelector(
   (app) => app?.loading ?? false,
 );
 
+export const selectTheme = createSelector(
+  (state: RootState) => state.app,
+  (app) => app?.theme ?? false,
+);
+
 export const selectManageMenuState = createSelector(
   (state: RootState) => state.app,
   (app) => app?.manageMenu ?? false,
+);
+
+export const selectSettingMenuState = createSelector(
+  (state: RootState) => state.app,
+  (app) => app?.settingMenu ?? false,
 );
 
 export const selectPageItemListData = createSelector(

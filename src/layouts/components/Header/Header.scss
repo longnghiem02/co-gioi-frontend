@@ -8,6 +8,7 @@
   transition      : top 0.3s;
   background-color: $bg-color-bar;
   box-shadow      : rgb(0 0 0 / 12%) 0px 5px 10px;
+  z-index: 200;
 
   .header-wrapper {
     max-width  : $content-width;
@@ -42,7 +43,6 @@
       .header-btn {
         width          : $header-btn-width;
         height         : $header-btn-height;
-        border         : 2px solid black;
         border-radius  : 3px;
         display        : flex;
         justify-content: center;
@@ -50,11 +50,20 @@
         font-size      : $header-btn-font-size;
 
         &:hover {
-          cursor          : pointer;
-          background-color: $bar-item-hover-color;
+          cursor: pointer;
         }
       }
     }
+  }
+
+  &.light {
+    color           : $color-light;
+    background-color: $bg-color-light;
+  }
+
+  &.dark {
+    color           : $color-dark;
+    background-color: $bg-color-dark;
   }
 }
 

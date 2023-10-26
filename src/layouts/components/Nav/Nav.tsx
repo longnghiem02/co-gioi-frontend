@@ -1,12 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { navItemLeft, navItemRight } from '../../../common/list';
+import { selectTheme } from '../../../store/app/selectors';
 import NavItem from './NavItem';
 import Loading from '../Loading/Loading';
 import './Nav.scss';
 
 function Nav() {
+	const theme = useSelector(selectTheme)
+	
 	return (
-		<nav className="nav">
+		<nav className={`nav ${theme}`}>
 			<div className="nav-wrapper">
 				<div className="nav-left">
 					{navItemLeft &&

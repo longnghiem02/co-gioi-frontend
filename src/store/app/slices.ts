@@ -6,7 +6,9 @@ import type { RootState } from '../index';
 
 interface AppState {
 	loading: boolean;
+	theme: string;
 	manageMenu: boolean;
+	settingMenu: boolean;
 	pageItemList: PageItemList;
 	searchValue: string;
 	itemData: ItemData;
@@ -14,7 +16,9 @@ interface AppState {
 
 const initialState: AppState = {
 	loading: false,
+	theme: 'light',
 	manageMenu: false,
+	settingMenu: false,
 	pageItemList: defaultPageItemList,
 	searchValue: '',
 	itemData: defaultItemData,
@@ -27,8 +31,14 @@ export const appSlice = createSlice({
 		setLoadingState: (state, action) => {
 			state.loading = action.payload;
 		},
+		setTheme: (state, action) => {
+			state.theme = action.payload;
+		},
 		setManageMenuState: (state, action) => {
 			state.manageMenu = action.payload;
+		},
+		setSettingMenuState: (state, action) => {
+			state.settingMenu = action.payload;
 		},
 		setPageItemList: (state, action) => {
 			state.pageItemList = action.payload;
@@ -42,11 +52,19 @@ export const appSlice = createSlice({
 	},
 });
 
-export const { setLoadingState, setManageMenuState, setPageItemList, setSearchValue, setItemData } = appSlice.actions;
+export const {
+	setLoadingState,
+	setTheme,
+	setManageMenuState,
+	setSettingMenuState,
+	setPageItemList,
+	setSearchValue,
+	setItemData,
+} = appSlice.actions;
 
 export const appPersistConfig = {
 	key: 'app',
-	whitelist: [],
+	whitelist: ['theme'],
 };
 
 export const selectApp = (state: RootState) => state.app;

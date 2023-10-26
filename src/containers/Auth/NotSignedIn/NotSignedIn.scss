@@ -2,8 +2,6 @@
 
 .sign-option {
   width          : 400px;
-  height         : $content-height;
-  margin         : auto;
   display        : flex;
   flex-direction : column;
   justify-content: center;
@@ -14,16 +12,28 @@
     width        : $sign-button-width;
     padding      : 10px 0;
     text-align   : center;
-    border       : 2px solid #000;
     border-radius: 25px;
 
-    &.sign-in {}
-
-    &.sign-up {}
-
     &:hover {
-      cursor          : pointer;
-      background-color: $bg-color-hover;
+      cursor: pointer;
+    }
+  }
+
+  &.light {
+    color           : $color-light;
+    background-color: $bg-color-light;
+
+    .button {
+      border: 2px solid $border-color-light;
+    }
+  }
+
+  &.dark {
+    color           : $color-dark;
+    background-color: $bg-color-dark;
+
+    .button {
+      border: 2px solid $border-color-dark;
     }
   }
 }
@@ -37,7 +47,6 @@
 @media only screen and (max-width: 740px) {
   .sign-option {
     width : $content-width-mobile;
-    height: $content-height-mobile;
 
     .button {
       width: $sign-button-width-mobile;

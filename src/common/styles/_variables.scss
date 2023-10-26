@@ -34,7 +34,6 @@ $nav-width-tablet      : 100vw;
 $nav-height-tablet     : 50px;
 $nav-width-mobile      : 100vw;
 $nav-height-mobile     : 50px;
-$nav-height-hide       : -50px;
 // Nav item
 $nav-item-width        : calc(($content-width - $loading-width) / 4);
 $nav-item-width-tablet : calc(($content-width-tablet - $loading-width) / 4);
@@ -49,21 +48,29 @@ $sign-button-width-mobile : calc($content-width-mobile - 100px);
 // button color
 
 //
-$content-padding-top          : 15px;
-$content-padding-side         : 20px;
-$content-padding-bottom       : 25px;
+$content-padding-top    : 15px;
+$content-padding-side   : 20px;
+$content-padding-bottom : 25px;
+
+
 $content-padding-top-mobile   : 10px;
 $content-padding-side-mobile  : 15px;
 $content-padding-bottom-mobile: 10px;
+
 
 //
 $content-inside-width     : calc($content-width - 40px);
 $content-height           : calc(100vh - $header-height - $nav-height);
 $content-inside-min-height: calc($content-height - 40px);
 
-$content-inside-width-mobile : calc($content-width-mobile - $content-padding-side * 2);
-$content-height-mobile       : calc(100vh - $header-height-mobile - $nav-height-mobile - $content-padding-top-mobile - $content-padding-bottom-mobile);
+$content-min-height-mobile    : calc(100vh - $header-height-mobile - $nav-height-mobile);
+$content-inside-width-mobile  : calc($content-width-mobile - $content-padding-side * 2);
+$content-inside-height-mobile : calc(100vh - $header-height-mobile - $nav-height-mobile);
 
+//
+$menu-padding-side-mobile : 10px;
+$menu-inside-width-mobile : calc($content-width-mobile - $menu-padding-side-mobile * 2);
+$menu-height-mobile       : calc(100vh - $header-height-mobile - $nav-height-mobile);
 
 // Category item
 $category-item-width    : calc(100% / 5);
@@ -94,17 +101,28 @@ $result-item-height-mobile : 40px;
 $result-header-font-size: 24px;
 
 // Manage menu
+$manage-menu-width-mobile: 100vw;
+
 $manage-menu-header-height: 40px;
 $manage-menu-item-height  : 30px;
+$manage-title-font-size   : 24px;
 
-$manage-title-font-size: 24px;
+//
+$setting-menu-width-mobile: 100vw;
+
+$setting-menu-header-height: 40px;
+$setting-menu-item-height  : 30px;
+$setting-title-font-size   : 24px;
+
+//
+$setting-menu-theme-width-mobile: 40%;
 
 // Font size
 $default-font-size: 16px;
 
 // Text color
 $text-color           : #000;
-$text-color-bar       : #777;
+$text-color-bar       : #888;
 $text-color-bar-active: #000;
 
 
@@ -120,5 +138,21 @@ $form-height         : 600px;
 $form-title-font-size: 50px;
 $form-button-width   : 250px;
 
-$form-width-mobile : calc($content-width-mobile - $content-padding-side-mobile);
-$form-height-mobile : $content-height-mobile;
+$form-width-mobile  : calc($content-width-mobile - $content-padding-side-mobile);
+
+//
+$filter-white: invert(0%) sepia(3%) saturate(0%) hue-rotate(257deg) brightness(104%) contrast(104%);
+$filter-black: invert(95%) sepia(86%) saturate(0%) hue-rotate(294deg) brightness(107%) contrast(101%);
+
+//
+$color-light               : #000;
+$color-light-disable       : #aaa;
+$bg-color-light            : #fff;
+$border-color-light        : #000;
+$border-color-light-disable: #999;
+
+$color-dark        : #fff;
+$color-dark-disable: #333;
+$bg-color-dark     : #121212;
+$border-color-dark : #fff;
+$border-color-dark-disable: #777;

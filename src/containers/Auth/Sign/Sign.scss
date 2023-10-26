@@ -2,7 +2,6 @@
 
 .form {
   width          : $form-width;
-  height         : $form-height;
   padding        : 20px 20px;
   display        : flex;
   flex-direction : column;
@@ -38,7 +37,7 @@
         input {
           width        : 100%;
           height       : 40px;
-          padding      : 0 25px 0 5px;
+          padding      : 0 30px 0 5px;
           font-size    : 18px;
           color        : #000;
           border-bottom: 2px solid #999;
@@ -59,7 +58,8 @@
           transform: translateY(50%);
 
           svg {
-            width: 20px;
+            width: 30px;
+            font-size: 18px;
           }
 
           &:hover {
@@ -77,11 +77,9 @@
       padding      : 10px 0;
       text-align   : center;
       border-radius: 30px;
-      border       : 2px solid #000;
 
       &:hover {
         cursor          : pointer;
-        background-color: $bg-color-hover;
       }
     }
   }
@@ -97,6 +95,76 @@
       }
     }
   }
+
+  &.light {
+    color           : $color-light;
+    background-color: $bg-color-light;
+
+    .form-content {  
+      .form-input-wrapper {  
+        .input-row {  
+          input {
+            color           : $color-light;
+            background-color: $bg-color-light;
+            border-bottom: 2px solid $border-color-light-disable;
+  
+            &:focus {
+              border-bottom: 2px solid #000;
+            }
+  
+            &:not(:placeholder-shown) {
+              border-bottom: 2px solid #000;
+            }
+          }
+        }
+      }
+    }
+
+    .form-button {
+      .btn-submit {
+        border       : 2px solid $border-color-light;
+  
+        &:hover {
+          cursor          : pointer;
+        }
+      }
+    }
+  }
+
+  &.dark {
+    color           : $color-dark;
+    background-color: $bg-color-dark;
+
+    .form-content {  
+      .form-input-wrapper {  
+        .input-row {  
+          input {
+            color           : $color-dark;
+            background-color: $bg-color-dark;
+            border-bottom: 2px solid $border-color-dark-disable;
+  
+            &:focus {
+              border-bottom: 2px solid #fff;
+            }
+  
+            &:not(:placeholder-shown) {
+              border-bottom: 2px solid #fff;
+            }
+          }
+        }
+      }
+    }
+
+    .form-button {
+      .btn-submit {
+        border       : 2px solid $border-color-dark;
+  
+        &:hover {
+          cursor          : pointer;
+        }
+      }
+    }
+  }
 }
 
 // Tablet
@@ -108,6 +176,5 @@
 @media only screen and (max-width: 740px) {
   .form {
     width          : $form-width-mobile;
-    height         : $form-height-mobile;
   }
 }

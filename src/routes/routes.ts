@@ -13,15 +13,7 @@ import SignUp from '../containers/Auth/Sign/SignUp';
 
 // Category pages
 import Path from '../containers/category-pages/Path';
-import Beast from '../containers/category-pages/Beast';
-import BlandGheaven from '../containers/category-pages/BlandGheaven';
-import Character from '../containers/category-pages/Character';
 import Gu from '../containers/category-pages/Gu';
-import GuFormation from '../containers/category-pages/GuFormation';
-import GuHouse from '../containers/category-pages/GuHouse';
-import KillerMove from '../containers/category-pages/KillerMove';
-import SecludedDomain from '../containers/category-pages/SecludedDomain';
-import OtherInfo from '../containers/category-pages/OtherInfo';
 
 //
 import PathData from '../containers/category-pages/Path/PathItemData/PathData';
@@ -29,7 +21,6 @@ import PathData from '../containers/category-pages/Path/PathItemData/PathData';
 // Manage pages
 import ManageAccount from '../containers/manage-pages/ManageAccount';
 import ManagePath from '../containers/manage-pages/ManagePath';
-import ManageOtherInfo from '../containers/manage-pages/ManageOtherInfo';
 
 const guestRoutes = [
 	{ path: PATH.HOME, page: Home, layout: DefaultLayout },
@@ -39,22 +30,13 @@ const guestRoutes = [
 	{ path: PATH.SIGN_IN, page: SignIn, layout: DefaultLayout },
 	{ path: PATH.SIGN_UP, page: SignUp, layout: DefaultLayout },
 
-	{ path: CATEGORY_ITEM_PATH.BEAST, page: Beast, layout: DefaultLayout },
-	{ path: CATEGORY_ITEM_PATH.BLAND_GHEAVEN, page: BlandGheaven, layout: DefaultLayout },
-	{ path: CATEGORY_ITEM_PATH.CHARACTER, page: Character, layout: DefaultLayout },
 	{ path: CATEGORY_ITEM_PATH.GU, page: Gu, layout: DefaultLayout },
-	{ path: CATEGORY_ITEM_PATH.GU_FORMATION, page: GuFormation, layout: DefaultLayout },
-	{ path: CATEGORY_ITEM_PATH.GU_HOUSE, page: GuHouse, layout: DefaultLayout },
-	{ path: CATEGORY_ITEM_PATH.KILLER_MOVE, page: KillerMove, layout: DefaultLayout },
 	{ path: CATEGORY_ITEM_PATH.PATH, page: Path, layout: DefaultLayout },
-	{ path: CATEGORY_ITEM_PATH.SECLUDED_DOMAIN, page: SecludedDomain, layout: DefaultLayout },
-	{ path: CATEGORY_ITEM_PATH.OTHER_INFO, page: OtherInfo, layout: DefaultLayout },
 
 	{ path: CATEGORY_ITEM_DATA_PATH.PATH, page: PathData, layout: DefaultLayout },
 
 	{ path: MANAGE_MENU_ITEM_PATH.ACCOUNT, page: ManageAccount, layout: DefaultLayout },
 	{ path: MANAGE_MENU_ITEM_PATH.PATH, page: ManagePath, layout: DefaultLayout },
-	{ path: MANAGE_MENU_ITEM_PATH.OTHER_INFO, page: ManageOtherInfo, layout: DefaultLayout },
 ];
 
 // const userRoutes = [

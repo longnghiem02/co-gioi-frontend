@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { PATH } from '../../../common/utils';
+import { selectTheme } from '../../../store/app/selectors';
 import './Sign.scss';
 
 function SignIn() {
+	const theme = useSelector(selectTheme);
+
 	const navigate = useNavigate();
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -18,8 +22,7 @@ function SignIn() {
 	};
 
 	return (
-		<>
-			<div className="form">
+			<div className={`form ${theme}`}>
 				<div className="form-title">Sign In</div>
 				<div className="form-content">
 					<div className="form-input-wrapper">
@@ -54,7 +57,6 @@ function SignIn() {
 					</div>
 				</div>
 			</div>
-		</>
 	);
 }
 

@@ -3,21 +3,41 @@
 .manage-menu {
   width           : 300px;
   height          : 500px;
+  padding         : 0 10px;
   position        : absolute;
   top             : $header-height;
   left            : 0;
   background-color: $bg-color-bar;
+  z-index         : 100;
 
   .manage-menu-header {
     height         : $manage-menu-header-height;
-    padding        : 0 10px;
     display        : flex;
     justify-content: center;
     align-items    : center;
 
     .manage-menu-title {
-      font-size  : 20px;
+      font-size  : 22px;
       font-weight: 600;
+    }
+  }
+
+  &.light {
+    color           : $color-light;
+    background-color: $bg-color-light;
+
+    a {
+      color: $color-light;
+
+    }
+  }
+
+  &.dark {
+    color           : $color-dark;
+    background-color: $bg-color-dark;
+
+    a {
+      color: $color-dark;
     }
   }
 }
@@ -28,7 +48,6 @@
   padding-left: 10px;
   display     : flex;
   align-items : center;
-  color       : $text-color;
 
   &:hover {
     cursor: pointer;
@@ -37,13 +56,26 @@
 
 .manage-menu-child-item {
   height      : $manage-menu-item-height;
-  padding-left: 20px;
+  padding-left: 22px;
   display     : flex;
   align-items : center;
   color       : $text-color;
+}
 
-  &.active {
-    color       : $text-color-bar-active;
-    border-right: 5px solid $text-color-bar-active;
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .manage-menu {
+    width : $manage-menu-width-mobile;
+    height: $menu-height-mobile;
+    top   : $header-height-mobile;
+
+    .manage-menu-header {
+      height: $manage-menu-header-height;
+    }
   }
 }

@@ -1,0 +1,104 @@
+@import 'src/common/styles/_variables.scss';
+
+.setting-menu {
+  width           : 300px;
+  height          : 500px;
+  padding         : 0 10px;
+  position        : absolute;
+  top             : $header-height;
+  right           : 0;
+  background-color: $bg-color-bar;
+  z-index         : 100;
+
+  .setting-menu-header {
+    height         : $setting-menu-header-height;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+    .setting-menu-title {
+      font-size  : 22px;
+      font-weight: 600;
+    }
+  }
+
+  &.light {
+    color           : $color-light;
+    background-color: $bg-color-light;
+  }
+
+  &.dark {
+    color           : $color-dark;
+    background-color: $bg-color-dark;
+  }
+}
+
+
+.setting-menu-item {
+  height     : $setting-menu-item-height;
+  display    : flex;
+  align-items: center;
+  font-size  : 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.setting-menu-child {
+  width          : 100%;
+  margin-top     : 10px;
+  display        : flex;
+  justify-content: center;
+  gap            : 20px;
+  color          : $text-color;
+
+  .setting-menu-theme {
+    width          : 40%;
+    height         : 35px;
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: center;
+    align-items    : center;
+    border-radius  : 3px;
+
+    &.light {
+      color           : $color-light;
+      background-color: $bg-color-light;
+      border          : 1px solid $border-color-light;
+    }
+
+    &.dark {
+      color           : $color-dark;
+      background-color: $bg-color-dark;
+      border          : 1px solid $border-color-dark;
+    }
+  }
+}
+
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .setting-menu {
+    width : $setting-menu-width-mobile;
+    height: $menu-height-mobile;
+    top   : $header-height-mobile;
+
+    .setting-menu-header {
+      height: $setting-menu-header-height;
+    }
+  }
+
+  .setting-menu-child {
+    width: $menu-inside-width-mobile;
+
+    .setting-menu-theme {
+      width : $setting-menu-theme-width-mobile;
+      height: 35px;
+    }
+  }
+}

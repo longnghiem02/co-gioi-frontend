@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectTheme } from '../../../store/app/selectors';
+import { RESULT_TAB_ID, RESULT_TAB_TITLE } from '../../../common/utils';
 import Filter from './Filter';
 import Search from './Search';
-import { RESULT_TAB_ID, RESULT_TAB_TITLE } from '../../../common/utils';
 import './Result.scss';
 
 function Result(props: any) {
+	const theme = useSelector(selectTheme)
+
 	const [isFilter, setIsFilter] = useState(true);
 	const [isSearch, setIsSearch] = useState(false);
 
@@ -20,7 +24,7 @@ function Result(props: any) {
 	};
 
 	return (
-		<div className="result">
+		<div className={`result ${theme}`}>
 			<div className="result-title">{props.title}</div>
 			<nav className="result-nav">
 				<div

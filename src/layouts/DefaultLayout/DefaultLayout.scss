@@ -4,13 +4,23 @@
 
   .container {
     max-width: $content-width;
-    margin   : $header-height auto $loading-height;
+    margin   : 0 auto 0;
+    padding  : $header-height 0 $nav-height;
 
     .content {
-      height         : $content-height;
-      padding        : $content-padding-top $content-padding-side $content-padding-bottom;
+      padding        : 0 $content-padding-side 0;
       display        : flex;
       justify-content: center;
+    }
+
+    &.light {
+      color           : $color-light;
+      background-color: $bg-color-light;
+    }
+
+    &.dark {
+      color           : $color-dark;
+      background-color: $bg-color-dark;
     }
   }
 }
@@ -25,12 +35,12 @@
   .container {
     max-width: unset !important;
     width    : $content-width-mobile;
-    margin   : $header-height-mobile auto $loading-height-mobile !important;
+    padding  : $header-height-mobile 0 $nav-height-mobile !important;
 
     .content {
-      width  : $content-width-mobile;
-      height : $content-height-mobile !important;
-      padding: $content-padding-top-mobile $content-padding-side-mobile $content-padding-bottom-mobile !important;
+      width     : $content-width-mobile;
+      min-height: $content-min-height-mobile;
+      padding   : $content-padding-top-mobile $content-padding-side-mobile $content-padding-bottom-mobile !important;
     }
   }
 }
