@@ -1,0 +1,108 @@
+@import 'src/common/styles/_variables.scss';
+
+.category-item-page {
+  width          : $content-inside-width;
+  min-height     : $content-inside-min-height;
+  display        : flex;
+  flex-direction : column;
+  justify-content: flex-start;
+
+  .category-item-page-title {
+    margin-bottom  : 15px;
+    display        : flex;
+    justify-content: center;
+    font-size      : $result-header-font-size;
+    font-weight    : 600;
+    text-transform : uppercase;
+  }
+
+  .category-item-page-content {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    gap           : 50px;
+
+    .item-list {
+      width          : 450px;
+      display        : flex;
+      flex-wrap      : wrap;
+      justify-content: center;
+      gap            : 20px;
+
+      .item {
+        width          : calc(100% / 3);
+        height         : $result-item-height;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        border-radius  : 5px;
+
+        span {
+          text-align        : center;
+          overflow          : hidden;
+          text-overflow     : ellipsis;
+          white-space       : normal;
+          display           : -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.light {
+          color           : $color-light;
+          background-color: $bg-color-light;
+          border          : 1px solid $border-color-light;
+        }
+
+        &.dark {
+          color           : $color-dark;
+          background-color: $bg-color-dark;
+          border          : 1px solid $border-color-dark;
+        }
+      }
+    }
+
+    .item-list-no-data {
+      justify-self: center;
+    }
+  }
+
+  &.light {
+    color           : $color-light;
+    background-color: $bg-color-light;
+  }
+
+  &.dark {
+    color           : $color-dark;
+    background-color: $bg-color-dark;
+  }
+}
+
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .category-item-page {
+    width     : $content-width-mobile;
+    min-height: $content-inside-min-height-mobile;
+
+    .category-item-page-content {
+      gap: 40px;
+
+      .item-list {
+        width: $content-inside-width-mobile;
+
+        .item {
+          width : $result-item-width-mobile;
+          height: $result-item-height-mobile;
+        }
+      }
+    }
+  }
+}

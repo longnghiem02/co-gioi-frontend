@@ -1,0 +1,242 @@
+@import 'src/common/styles/_variables.scss';
+
+.item-filter {
+  display       : flex;
+  flex-direction: column;
+  gap           : 25px;
+
+  .filter-data {
+    display       : flex;
+    flex-direction: column;
+    gap           : 10px;
+
+    .filter-row {
+      display    : flex;
+      height     : 40px;
+      align-items: center;
+
+      .search-input {
+        padding  : 6px 8px;
+        font-size: $default-font-size;
+      }
+
+      .select-path {
+        width: 70%;
+
+        .css-13cymwt-control {
+          border       : none;
+          border-radius: 0px;
+          outline      : none;
+        }
+
+        .css-t3ipsp-control {
+          border       : none;
+          border-radius: 0px;
+          box-shadow   : none;
+
+          &:hover {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  .filter-btn-wrapper {
+    display        : flex;
+    justify-content: space-evenly;
+
+    .filter-btn {
+      width          : 40%;
+      height         : 40px;
+      display        : flex;
+      justify-content: center;
+      align-items    : center;
+      border-radius  : 5px;
+      border         : 1px solid #000;
+    }
+  }
+
+  &.light {
+    color           : $color-light;
+    background-color: $bg-color-light;
+
+    .filter-data {
+      .filter-row {
+        .search-input {
+          color           : $color-light;
+          background-color: $bg-color-light;
+          border-bottom   : 1px solid $border-color-light-disable;
+
+          &:focus {
+            border-bottom: 2px solid $border-color-light;
+          }
+        }
+
+        .select-path {
+          color           : $color-light;
+          background-color: $bg-color-light;
+          border-bottom   : 1px solid $border-color-light-disable;
+
+          &:has(.css-t3ipsp-control) {
+            border-bottom: 2px solid $border-color-light;
+          }
+
+          .css-13cymwt-control {
+            color: $color-light;
+            background-color: $bg-color-light;
+
+            .css-1dimb5e-singleValue {
+              color: $color-light;
+            }
+          }
+
+          .css-t3ipsp-control {
+            color: $color-light;
+            background-color: $bg-color-light;
+
+            .css-1fdsijx-ValueContainer {
+              .css-1dimb5e-singleValue {
+                color: $color-light;
+              }
+              .css-166bipr-Input {
+                color: $color-light;
+              }
+            }
+          }
+
+          .css-1nmdiq5-menu {
+            background-color: $bg-color-light;
+
+            .css-1n6sfyn-MenuList {
+              .css-d7l1ni-option {
+                background-color: $hover-color-light;
+              }
+              .css-10wo9uf-option {
+                &:active {
+                  background-color: $active-color-light;
+                }
+              }
+              .css-tr4s17-option {
+                color: $color-light;
+                background-color: $hover-color-light;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .filter-btn-wrapper {
+      .filter-btn {
+        border: 1px solid $border-color-light;
+      }
+    }
+  }
+
+  &.dark {
+    color           : $color-dark;
+    background-color: $bg-color-dark;
+
+    .filter-data {
+      .filter-row {
+        .search-input {
+          color           : $color-dark;
+          background-color: $bg-color-dark;
+          border-bottom   : 1px solid $border-color-dark-disable;
+
+          &:focus {
+            border-bottom: 2px solid $border-color-dark;
+          }
+        }
+
+        .select-path {
+          color           : $color-dark;
+          background-color: $bg-color-dark;
+          border-bottom   : 1px solid $border-color-dark-disable;
+
+          &:has(.css-t3ipsp-control) {
+            border-bottom: 2px solid $border-color-dark;
+          }
+
+          .css-13cymwt-control {
+            color: $color-dark;
+            background-color: $bg-color-dark;
+
+            .css-1dimb5e-singleValue {
+              color: $color-dark;
+            }
+          }
+
+          .css-t3ipsp-control {
+            color: $color-dark;
+            background-color: $bg-color-dark;
+
+            .css-1fdsijx-ValueContainer {
+              .css-1dimb5e-singleValue {
+                color: $color-dark;
+              }
+              .css-166bipr-Input {
+                color: $color-dark;
+              }
+            }
+          }
+
+          .css-1nmdiq5-menu {
+            background-color: $bg-color-dark;
+
+            .css-1n6sfyn-MenuList {
+              .css-d7l1ni-option {
+                background-color: $hover-color-dark;
+              }
+              .css-10wo9uf-option {
+                &:active {
+                  background-color: $active-color-dark;
+                }
+              }
+              .css-tr4s17-option {
+                color: $color-dark;
+                background-color: $hover-color-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .filter-btn-wrapper {
+      .filter-btn {
+        border: 1px solid $border-color-dark;
+      }
+    }
+  }
+}
+
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .item-filter {
+    width: $content-inside-width-mobile;
+
+    .filter-data {
+      .filter-row {
+        label {
+          width: 30%;
+        }
+  
+        .search-input {
+          width    : 70%;
+          font-size: 18px;
+        }
+  
+        .select-path {
+          width: 70%;
+        }
+      }
+    }
+  }
+}

@@ -12,15 +12,17 @@ import SignIn from '../containers/Auth/Sign/SignIn';
 import SignUp from '../containers/Auth/Sign/SignUp';
 
 // Category pages
-import Path from '../containers/category-pages/Path';
-import Gu from '../containers/category-pages/Gu';
+import Gu from '../containers/pages/Category/CategoryItemPage/Gu';
+import Path from '../containers/pages/Category/CategoryItemPage/Path';
 
 //
-import PathData from '../containers/category-pages/Path/PathItemData/PathData';
+import GuData from '../containers/pages/Category/CategoryItemPage/Gu/GuData';
+import PathData from '../containers/pages/Category/CategoryItemPage/Path/PathData';
 
 // Manage pages
-import ManageAccount from '../containers/manage-pages/ManageAccount';
-import ManagePath from '../containers/manage-pages/ManagePath';
+import ManageAccount from '../containers/pages/Manage/ManageAccount';
+import ManageGu from '../containers/pages/Manage/ManageCategory/ManageGu';	
+import ManagePath from '../containers/pages/Manage/ManageCategory/ManagePath';
 
 const guestRoutes = [
 	{ path: PATH.HOME, page: Home, layout: DefaultLayout },
@@ -33,9 +35,11 @@ const guestRoutes = [
 	{ path: CATEGORY_ITEM_PATH.GU, page: Gu, layout: DefaultLayout },
 	{ path: CATEGORY_ITEM_PATH.PATH, page: Path, layout: DefaultLayout },
 
+	{ path: CATEGORY_ITEM_DATA_PATH.GU, page: GuData, layout: DefaultLayout },
 	{ path: CATEGORY_ITEM_DATA_PATH.PATH, page: PathData, layout: DefaultLayout },
 
 	{ path: MANAGE_MENU_ITEM_PATH.ACCOUNT, page: ManageAccount, layout: DefaultLayout },
+	{ path: MANAGE_MENU_ITEM_PATH.GU, page: ManageGu, layout: DefaultLayout },
 	{ path: MANAGE_MENU_ITEM_PATH.PATH, page: ManagePath, layout: DefaultLayout },
 ];
 

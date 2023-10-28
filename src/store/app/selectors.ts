@@ -23,6 +23,11 @@ export const selectSettingMenuState = createSelector(
   (app) => app?.settingMenu ?? false,
 );
 
+export const selectInfoModalState = createSelector(
+  (state: RootState) => state.app,
+  (app) => app?.infoModal ?? false,
+);
+
 export const selectPageItemListData = createSelector(
   (state: RootState) => state.app,
   (app) => app?.pageItemList?.data ?? defaultPageItemList.data,

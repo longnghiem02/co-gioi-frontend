@@ -9,6 +9,7 @@ interface AppState {
 	theme: string;
 	manageMenu: boolean;
 	settingMenu: boolean;
+	infoModal: boolean;
 	pageItemList: PageItemList;
 	searchValue: string;
 	itemData: ItemData;
@@ -19,6 +20,7 @@ const initialState: AppState = {
 	theme: 'light',
 	manageMenu: false,
 	settingMenu: false,
+	infoModal: false,
 	pageItemList: defaultPageItemList,
 	searchValue: '',
 	itemData: defaultItemData,
@@ -40,6 +42,9 @@ export const appSlice = createSlice({
 		setSettingMenuState: (state, action) => {
 			state.settingMenu = action.payload;
 		},
+		setInfoModalState: (state, action) => {
+			state.infoModal = action.payload;
+		},
 		setPageItemList: (state, action) => {
 			state.pageItemList = action.payload;
 		},
@@ -57,6 +62,7 @@ export const {
 	setTheme,
 	setManageMenuState,
 	setSettingMenuState,
+	setInfoModalState,
 	setPageItemList,
 	setSearchValue,
 	setItemData,

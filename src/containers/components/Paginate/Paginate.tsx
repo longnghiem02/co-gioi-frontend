@@ -5,32 +5,32 @@ import { selectPageItemListMeta, selectSearchValue, selectTheme } from '../../..
 import './Paginate.scss';
 
 function Paginate(props: any) {
-	const theme = useSelector(selectTheme)
+	const theme = useSelector(selectTheme);
 	const pageItemListMeta = useSelector(selectPageItemListMeta);
 	const searchValue = useSelector(selectSearchValue);
 
 	const handleChangePage = (e: any) => {
 		const newPage = e.selected + 1;
-		if (searchValue === '') {
-			props.getAll({ take: 10, page: newPage });
-		} else {
-			props.search({ take: 10, page: newPage, name: searchValue });
-		}
+			props.getAll({ page: newPage, limit: 10, search: searchValue });
 	};
 
 	return (
 		<div className={`paginate ${theme}`}>
-			<ReactPaginate
-				breakLabel="..."
-				nextLabel=">"
-				onPageChange={(e) => handleChangePage(e)}
-				pageRangeDisplayed={3}
-				marginPagesDisplayed={1}
-				forcePage={pageItemListMeta.currentPage - 1}
-				pageCount={pageItemListMeta.totalPage}
-				previousLabel="<"
-				renderOnZeroPageCount={null}
-			/>
+			{pageItemListMeta.totalPages > 1 ? (
+				<ReactPaginate
+					breakLabel="..."
+					nextLabel=">"
+					onPageChange={(e) => handleChangePage(e)}
+					pageRangeDisplayed={1}
+					marginPagesDisplayed={1}
+					forcePage={pageItemListMeta.currentPage - 1}
+					pageCount={pageItemListMeta.totalPages}
+					previousLabel="<"
+					renderOnZeroPageCount={null}
+				/>
+			) : (
+				''
+			)}
 		</div>
 	);
 }

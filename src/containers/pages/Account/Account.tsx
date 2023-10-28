@@ -2,25 +2,18 @@
 // import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 // import { PATH } from '../../../utils';
-import NotLoggedIn from '../../Auth/NotSignedIn';
+import NotSignedIn from '../../Auth/NotSignedIn';
 import './Account.scss';
-import { selectLoggedInState } from '../../../store/authentication/selectors';
+import { selectAccessToken } from '../../../store/authentication/selectors';
 
 function Account() {
-	const isLoggedIn = useSelector(selectLoggedInState);
-	// const navigate = useNavigate()
-
-	// useEffect(() => {
-	// 	if (accountState.isLoggedIn === false || accountState.accountInfo === null) {
-	// 		navigate(PATH.LOGIN)
-	// 	}
-	// })
+	const accessToken = useSelector(selectAccessToken);
 
 	return (
 		<>
 			{(() => {
-				if (isLoggedIn === false) {
-					return <NotLoggedIn />;
+				if (accessToken === '') {
+					return <NotSignedIn />;
 				} else {
 					return <p>Account page</p>;
 				}

@@ -1,9 +1,9 @@
 export interface PageItemList {
 	data: any[];
 	meta: {
-		totalItem: number;
-		itemPerPage: number;
-		totalPage: number;
+		totalItems: number;
+		itemsPerPage: number;
+		totalPages: number;
 		currentPage: number;
 		hasPreviousPage: boolean;
 		hasNextPage: boolean;
@@ -13,9 +13,9 @@ export interface PageItemList {
 export const defaultPageItemList = {
 	data: [],
 	meta: {
-		totalItem: 0,
-		itemPerPage: 0,
-		totalPage: 0,
+		totalItems: 0,
+		itemsPerPage: 0,
+		totalPages: 0,
 		currentPage: 0,
 		hasPreviousPage: false,
 		hasNextPage: false,

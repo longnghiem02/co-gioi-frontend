@@ -1,0 +1,191 @@
+@import 'src/common/styles/variables';
+
+.manage-table {
+  width: 80%;
+
+  .table {
+    width: 100%;
+
+    .table-head {
+      .table-row {
+        display: flex;
+
+        .name-column {
+          width          : 80%;
+          height         : 35px;
+          padding        : 0 15px;
+          display        : flex;
+          justify-content: center;
+          align-items    : center;
+        }
+
+        .view-column {
+          width          : 20%;
+          height         : 35px;
+          margin         : auto;
+          display        : flex;
+          justify-content: center;
+          align-items    : center;
+        }
+      }
+    }
+
+    .table-body {
+      .table-row {
+        display   : flex;
+
+        .name-column {
+          width          : 80%;
+          height         : 35px;
+          padding        : 0 15px;
+          display        : flex;
+          align-items    : center;
+        }
+
+        .view-column {
+          width          : 20%;
+          height         : 35px;
+          margin         : auto;
+          display        : flex;
+          justify-content: center;
+          align-items    : center;
+
+          .view-btn {
+            width          : 28px;
+            height         : 28px;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            border-radius  : 3px;
+
+            &:hover {
+              cursor          : pointer;
+            }
+          }
+        }
+
+        .no-column {
+          width: 100%;
+          height         : 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &.light {
+    color           : $color-light;
+    background-color: $bg-color-light;
+
+    .table {  
+      .table-head {
+        .table-row {
+          border : 1px solid $border-color-light;
+  
+          .name-column {
+            border         : 1px solid $border-color-light;
+          }
+  
+          .view-column {
+            border         : 1px solid $border-color-light;
+          }
+        }
+      }
+  
+      .table-body {
+        .table-row {
+          border    : 1px solid $border-color-light;
+          border-top: none;
+  
+          .name-column {
+            border         : 1px solid $border-color-light;
+            border-top     : none;
+          }
+  
+          .view-column {
+            border         : 1px solid $border-color-light;
+            border-top     : none;
+  
+            .view-btn {
+              border         : 2px solid $border-color-light;
+  
+              &:hover {
+                cursor          : pointer;
+              }
+            }
+          }
+
+          .no-column {
+            border         : 1px solid $border-color-light;
+            border-top     : none;
+          }
+        }
+      }
+    }
+  }
+
+  &.dark {
+    color           : $color-dark;
+    background-color: $bg-color-dark;
+
+    .table {  
+      .table-head {
+        .table-row {
+          border : 1px solid $border-color-dark;
+  
+          .name-column {
+            border         : 1px solid $border-color-dark;
+          }
+  
+          .view-column {
+            border         : 1px solid $border-color-dark;
+          }
+        }
+      }
+  
+      .table-body {
+        .table-row {
+          border    : 1px solid $border-color-dark;
+          border-top: none;
+  
+          .name-column {
+            border         : 1px solid $border-color-dark;
+            border-top     : none;
+          }
+  
+          .view-column {
+            border         : 1px solid $border-color-dark;
+            border-top     : none;
+  
+            .view-btn {
+              border         : 2px solid $border-color-dark;
+  
+              &:hover {
+                cursor          : pointer;
+              }
+            }
+          }
+
+          .no-column {
+            border         : 1px solid $border-color-light;
+            border-top     : none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .manage-table {
+    width    : $content-inside-width-mobile;
+  }
+}

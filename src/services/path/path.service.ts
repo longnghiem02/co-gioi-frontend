@@ -1,36 +1,31 @@
 import httpRequest from '../../config/axios';
 
 export const getPathService = async (id: number) => {
-	const response = await httpRequest.get(`/path/get?id=${id}`);
+	const response = await httpRequest.get(`/path/${id}`);
 	return response.data;
 };
 
 export const getAllPathService = async (data: any) => {
-	const response = await httpRequest.get(`/path/get-all?take=${data.take}&page=${data.page}`);
-	return response.data;
-};
-
-export const searchPathService = async (data: any) => {
-	const response = await httpRequest.get(`/path/search?take=${data.take}&page=${data.page}&name=${data.name}`);
+	const response = await httpRequest.get(`/path?page=${data.page}&limit=${data.limit}&search=${data.search ? data.search : ''}`);
 	return response.data;
 };
 
 export const addPathService = async (data: any) => {
-	const response = await httpRequest.post(`/path/add`, data);
+	const response = await httpRequest.post(`/path`, data);
 	return response.data;
 };
 
 export const updatePathService = async (id: number, data: any) => {
-	const response = await httpRequest.put(`/path/update/${id}`, data);
+	const response = await httpRequest.put(`/path/${id}`, data);
 	return response.data;
 };
 
 export const deletePathService = async (id: number) => {
-	const response = await httpRequest.delete(`/path/delete/${id}`);
+	const response = await httpRequest.delete(`/path/${id}`);
 	return response.data;
 };
 
 export const getAllPathNameService = async () => {
-	const response = await httpRequest.get(`/path/get-all-name`);
+	const response = await httpRequest.get(`/path/all/name`);
 	return response.data;
 };

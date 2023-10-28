@@ -53,9 +53,9 @@ $content-padding-side   : 20px;
 $content-padding-bottom : 25px;
 
 
-$content-padding-top-mobile   : 10px;
+$content-padding-top-mobile   : 20px;
 $content-padding-side-mobile  : 15px;
-$content-padding-bottom-mobile: 10px;
+$content-padding-bottom-mobile: 30px;
 
 
 //
@@ -65,7 +65,7 @@ $content-inside-min-height: calc($content-height - 40px);
 
 $content-min-height-mobile    : calc(100vh - $header-height-mobile - $nav-height-mobile);
 $content-inside-width-mobile  : calc($content-width-mobile - $content-padding-side * 2);
-$content-inside-height-mobile : calc(100vh - $header-height-mobile - $nav-height-mobile);
+$content-inside-min-height-mobile : calc(100vh - $header-height-mobile - $nav-height-mobile - $content-padding-top-mobile - $content-padding-bottom-mobile);
 
 //
 $menu-padding-side-mobile : 10px;
@@ -90,15 +90,19 @@ $result-nav-item-height    : 35px;
 $result-nav-item-font-size : 18px;
 
 //
-$result-item-height : 40px;
+$result-item-height : 70px;
 
 //
 $result-item-width-mobile  : 45%;
-$result-item-height-mobile : 40px;
-
+$result-item-height-mobile : 70px;
 
 // Result
 $result-header-font-size: 24px;
+
+// Info modal
+$info-modal-height-mobile: 200px;
+$info-modal-header-height-mobile: 35px;
+$info-modal-content-height-mobile: calc($info-modal-height-mobile - $info-modal-header-height-mobile - 1px);
 
 // Manage menu
 $manage-menu-width-mobile: 100vw;
@@ -150,9 +154,13 @@ $color-light-disable       : #aaa;
 $bg-color-light            : #fff;
 $border-color-light        : #000;
 $border-color-light-disable: #999;
+$hover-color-light: #ddd;
+$active-color-light: #bbb;
 
 $color-dark        : #fff;
 $color-dark-disable: #333;
 $bg-color-dark     : #121212;
 $border-color-dark : #fff;
 $border-color-dark-disable: #777;
+$hover-color-dark: #333;
+$active-color-dark: #555;

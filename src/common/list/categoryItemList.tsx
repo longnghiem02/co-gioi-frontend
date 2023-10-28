@@ -8,15 +8,15 @@ const categoryItemList = [
 	// 	path: CATEGORY_ITEM_PATH.CHARACTER,
 	// },
 	{
-		icon: images.galaxy,
-		title: CATEGORY_ITEM_TITLE.PATH,
-		path: CATEGORY_ITEM_PATH.PATH,
-	},
-	{
 		icon: images.butterfly,
 		title: CATEGORY_ITEM_TITLE.GU,
 		path: CATEGORY_ITEM_PATH.GU,
 	},
+	// {
+	// 	icon: images.galaxy,
+	// 	title: CATEGORY_ITEM_TITLE.PATH,
+	// 	path: CATEGORY_ITEM_PATH.PATH,
+	// },
 	// {
 	// 	icon: images.tower,
 	// 	title: CATEGORY_ITEM_TITLE.GU_HOUSE,

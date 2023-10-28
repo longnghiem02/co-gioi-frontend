@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { RootState } from '..';
 
-export const selectLoggedInState = createSelector(
+export const selectAccessToken = createSelector(
   (state: RootState) => state.auth,
-  (authentication) => authentication?.isLoggedIn ?? false,
+  (authentication) => authentication?.accessToken ?? false,
 );

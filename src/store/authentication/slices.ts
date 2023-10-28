@@ -2,34 +2,31 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { RootState } from '../index';
 
-// Define a type for the slice state
 interface AuthState {
-  isLoggedIn: boolean;
+  accessToken: string
 }
 
-// Define the initial state using that type
 const initialState: AuthState = {
-  isLoggedIn: false,
+  accessToken: ''
 };
 
 export const authSlice = createSlice({
   name: 'authentication',
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    setLoginState: (state, action) => {
-      state.isLoggedIn = action.payload;
+    setAccessToken: (state, action) => {
+      state.accessToken = action.payload;
     },
   },
 });
 
 export const {
-  setLoginState,
+  setAccessToken
 } = authSlice.actions;
 
 export const authPersistConfig = {
   key: 'auth',
-	whitelist: ['isLoggedIn'],
+	whitelist: ['accessToken'],
 }
 
 // Other code such as selectors can use the imported `RootState` type

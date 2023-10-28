@@ -1,0 +1,109 @@
+@import 'src/common/styles/_variables.scss';
+
+.info-modal {
+  position: relative;
+  .modal-header {
+    width   : 100%;
+    position: fixed;
+    top     : 0;
+
+    .modal-header-wrapper {
+      height         : 35px;
+      display        : flex;
+      justify-content: space-between;
+      align-items    : center;
+
+      .modal-icon {
+        width          : 35px;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+      }
+
+      .modal-title {
+        font-size  : 18px;
+        font-weight: 600;
+      }
+
+      .modal-btn {
+        width          : 35px;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+      }
+    }
+  }
+
+  .modal-content {
+    margin-top: 35px;
+    padding   : 10px 20px;
+    height    : 260px;
+    overflow-y: scroll;
+
+    span {
+      text-wrap : wrap;
+      line-break: normal;
+    }
+  }
+
+  &.light {
+    color           : $color-light;
+    background-color: $bg-color-light;
+
+    .modal-header {
+      background-color: $bg-color-light;
+      border-bottom   : 1px solid $border-color-light;
+    }
+
+    .modal-content {
+      color           : $color-light;
+      background-color: $bg-color-light;
+    }
+  }
+
+  &.dark {
+    color           : $color-dark;
+    background-color: $bg-color-dark;
+
+    .modal-header {
+      background-color: $bg-color-dark;
+      border-bottom   : 1px solid $border-color-dark;
+    }
+
+    .modal-content {
+      color           : $color-dark;
+      background-color: $bg-color-dark;
+    }
+  }
+}
+
+// Tablet
+// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+// }
+
+// Mobile
+@media only screen and (max-width: 740px) {
+  .info-modal {
+    height: $info-modal-header-height-mobile;
+
+    .modal-header {
+      .modal-header-wrapper {
+        .modal-icon {
+          width: $info-modal-header-height-mobile;
+        }
+
+        .modal-btn {
+          width: $info-modal-header-height-mobile;
+        }
+      }
+    }
+
+    .modal-content {
+      margin-top: $info-modal-header-height-mobile;
+      padding   : 10px 20px;
+      // height : $info-modal-content-height-mobile;
+      height    : $info-modal-content-height-mobile;
+    }
+  }
+}
