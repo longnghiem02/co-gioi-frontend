@@ -20,7 +20,7 @@
     display       : flex;
     flex-direction: column;
     align-items   : center;
-    gap           : 50px;
+    gap           : 65px;
 
     .item-list {
       width          : 450px;
@@ -93,7 +93,7 @@
     min-height: $content-inside-min-height-mobile;
 
     .category-item-page-content {
-      gap: 40px;
+      gap: 65px;
 
       .item-list {
         width: $content-inside-width-mobile;

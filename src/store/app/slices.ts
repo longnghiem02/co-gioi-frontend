@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-
 import { ItemData, defaultItemData } from '../../common/interface/ItemData.interface';
 import { PageItemList, defaultPageItemList } from '../../common/interface/PageItemList.interface';
+import { Filter, defaultFilter } from '../../common/interface/Filter.interface';
 import type { RootState } from '../index';
 
 interface AppState {
@@ -11,7 +11,7 @@ interface AppState {
 	settingMenu: boolean;
 	infoModal: boolean;
 	pageItemList: PageItemList;
-	searchValue: string;
+	filter: Filter;
 	itemData: ItemData;
 }
 
@@ -22,7 +22,7 @@ const initialState: AppState = {
 	settingMenu: false,
 	infoModal: false,
 	pageItemList: defaultPageItemList,
-	searchValue: '',
+	filter: defaultFilter,
 	itemData: defaultItemData,
 };
 
@@ -48,8 +48,8 @@ export const appSlice = createSlice({
 		setPageItemList: (state, action) => {
 			state.pageItemList = action.payload;
 		},
-		setSearchValue: (state, action) => {
-			state.searchValue = action.payload;
+		setFilter: (state, action) => {
+			state.filter = action.payload;
 		},
 		setItemData: (state, action) => {
 			state.itemData = action.payload;
@@ -64,7 +64,7 @@ export const {
 	setSettingMenuState,
 	setInfoModalState,
 	setPageItemList,
-	setSearchValue,
+	setFilter,
 	setItemData,
 } = appSlice.actions;
 

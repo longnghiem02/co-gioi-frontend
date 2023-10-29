@@ -5,7 +5,7 @@ function Novel() {
 
 	return (
 		<div className="account">
-      Novel page
+      Comming Soon
     </div>
 	);
 }

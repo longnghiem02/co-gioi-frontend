@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useAppDispatch } from '../../../store/hooks';
-import { setSearchValue } from '../../../store/app/slices';
+import { setFilter } from '../../../store/app/slices';
 import { selectTheme } from '../../../store/app/selectors';
 import './ManageBar.scss';
 
@@ -14,7 +14,7 @@ function ManageBar(props: any) {
 
 	useEffect(() => {
 		return () => {
-			dispatch(setSearchValue(''));
+			dispatch(setFilter({ search: '' }));
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -25,13 +25,13 @@ function ManageBar(props: any) {
 	};
 
 	const handleSearch = async () => {
-		dispatch(setSearchValue(inputValue));
+		dispatch(setFilter({ search: inputValue }));
 		await props.getAll({ take: 10, page: 1, name: inputValue });
 	};
 
 	const handleRefresh = () => {
 		setInputValue('');
-		dispatch(setSearchValue(''));
+		dispatch(setFilter({ search: '' }));
 		props.getAll({ take: 10, page: 1 });
 	};
 

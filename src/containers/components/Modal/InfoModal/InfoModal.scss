@@ -30,6 +30,10 @@
         display        : flex;
         justify-content: center;
         align-items    : center;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -38,11 +42,19 @@
     margin-top: 35px;
     padding   : 10px 20px;
     height    : 260px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow-y: scroll;
 
     span {
       text-wrap : wrap;
       line-break: normal;
+    }
+
+    &::-webkit-scrollbar {
+      display      : none;
     }
   }
 

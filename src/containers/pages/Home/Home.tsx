@@ -5,7 +5,7 @@ function Home() {
 
 	return (
 		<div className="home">
-      Home page
+      Comming Soon
     </div>
 	);
 }

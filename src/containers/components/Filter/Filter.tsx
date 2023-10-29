@@ -3,10 +3,12 @@ import { useSelector } from 'react-redux';
 import Select from 'react-select';
 import { useAppDispatch } from '../../../store/hooks';
 import { selectTheme } from '../../../store/app/selectors';
-import { setItemData, setPageItemList, setSearchValue } from '../../../store/app/slices';
+import { setItemData, setPageItemList, setFilter } from '../../../store/app/slices';
 import { getAllPathNameService } from '../../../services/path/path.service';
 import { OptionList } from '../../../common/interface/SelectOption.interface';
 import './Filter.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 function Filter(props: any) {
 	const theme = useSelector(selectTheme);
@@ -16,8 +18,8 @@ function Filter(props: any) {
 		optionList: [],
 		isLoading: true,
 	});
+	const [filterState, setFilterState] = useState(false);
 	const [inputValue, setInputValue] = useState('');
-
 	const [selectedPath, setSelectedPath] = useState(null);
 	const [pathValue, setPathValue] = useState('');
 
@@ -32,7 +34,7 @@ function Filter(props: any) {
 
 	useEffect(() => {
 		return () => {
-			dispatch(setSearchValue(''));
+			dispatch(setFilter({ search: '' }));
 			dispatch(setItemData(null));
 			dispatch(setPageItemList(null));
 		};
@@ -70,22 +72,26 @@ function Filter(props: any) {
 		}
 	};
 
+	const handleChangeFilterState = () => {
+		setFilterState(!filterState);
+	};
+
 	const handleClearFilter = async () => {
 		setInputValue('');
 		setSelectedPath(null);
 		setPathValue('');
-		dispatch(setSearchValue(''));
-		await props.getAll({ page: 1, limit: 10, search: inputValue });
+		dispatch(setFilter({ search: '' }));
+		await props.getAll({ page: 1, limit: 10 });
 	};
 
 	const handleFilter = async () => {
-		dispatch(setSearchValue(inputValue));
+		dispatch(setFilter({ search: inputValue, pathId: pathValue }));
 		await props.getAll({ page: 1, limit: 10, search: inputValue, pathId: pathValue });
 	};
 
 	return (
 		<>
-			<div className={`item-filter ${theme}`}>
+			<div className={`item-filter ${theme} ${filterState === true ? '' : 'hide'}`}>
 				<div className="filter-data">
 					<div className="filter-row">
 						<label>Tìm kiếm</label>
@@ -117,6 +123,11 @@ function Filter(props: any) {
 					</div>
 					<div className="filter-btn" onClick={() => handleFilter()}>
 						<span>Tìm</span>
+					</div>
+				</div>
+				<div className="filter-btn-state">
+					<div className="btn-state" onClick={() => handleChangeFilterState()}>
+						{filterState === true ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown} />}
 					</div>
 				</div>
 			</div>

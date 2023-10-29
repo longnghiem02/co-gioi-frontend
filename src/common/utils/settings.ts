@@ -7,8 +7,8 @@ export const SETTING_TYPE = {
 };
 
 export const THEME_TITLE = {
-	LIGHT: 'Sáng',
-	DARK: 'Tối',
+	LIGHT: 'Bạch Thiên',
+	DARK: 'Hắc Thiên',
 };
 
 export const THEME_KEY = {

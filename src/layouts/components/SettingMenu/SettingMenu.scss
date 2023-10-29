@@ -25,11 +25,27 @@
   &.light {
     color           : $color-light;
     background-color: $bg-color-light;
+
+    .setting-menu-child {
+      .setting-menu-theme {
+        &.active {
+          border-bottom: 2px solid $border-color-light;
+        }
+      }
+    }
   }
 
   &.dark {
     color           : $color-dark;
     background-color: $bg-color-dark;
+
+    .setting-menu-child {
+      .setting-menu-theme {
+        &.active {
+          border-bottom: 2px solid $border-color-dark;
+        }
+      }
+    }
   }
 }
 
@@ -51,28 +67,14 @@
   display        : flex;
   justify-content: center;
   gap            : 20px;
-  color          : $text-color;
 
   .setting-menu-theme {
-    width          : 40%;
+    width          : 50%;
     height         : 35px;
     display        : flex;
     flex-wrap      : wrap;
     justify-content: center;
     align-items    : center;
-    border-radius  : 3px;
-
-    &.light {
-      color           : $color-light;
-      background-color: $bg-color-light;
-      border          : 1px solid $border-color-light;
-    }
-
-    &.dark {
-      color           : $color-dark;
-      background-color: $bg-color-dark;
-      border          : 1px solid $border-color-dark;
-    }
   }
 }
 

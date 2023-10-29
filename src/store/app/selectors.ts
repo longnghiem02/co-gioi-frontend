@@ -38,9 +38,9 @@ export const selectPageItemListMeta = createSelector(
   (app) => app?.pageItemList?.meta ?? defaultPageItemList.meta,
 );
 
-export const selectSearchValue = createSelector(
+export const selectFilter = createSelector(
   (state: RootState) => state.app,
-  (app) => app?.searchValue ?? false,
+  (app) => app?.filter ?? false,
 );
 
 export const selectItemData = createSelector(

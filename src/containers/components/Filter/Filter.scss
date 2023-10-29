@@ -38,6 +38,23 @@
             border: none;
           }
         }
+
+        .css-1nmdiq5-menu {
+          .css-1n6sfyn-MenuList {
+            &::-webkit-scrollbar {
+              border-radius: 0;
+              width        : 5px;
+            }
+          
+            &::-webkit-scrollbar-thumb {
+              border-radius   : 4px;
+            }
+          
+            &::-webkit-scrollbar-track {
+              border-radius   : 0;
+            }
+          }
+        }
       }
     }
   }
@@ -54,6 +71,31 @@
       align-items    : center;
       border-radius  : 5px;
       border         : 1px solid #000;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .filter-btn-state {
+    position: relative;
+
+    .btn-state {
+      width          : 50px;
+      height         : 25px;
+      position       : absolute;
+      top            : 0;
+      left           : 50%;
+      transform      : translateX(-50%);
+      display        : flex;
+      justify-content: center;
+      align-items    : center;
+      border-radius  : 0 0 5px 5px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -83,7 +125,7 @@
           }
 
           .css-13cymwt-control {
-            color: $color-light;
+            color           : $color-light;
             background-color: $bg-color-light;
 
             .css-1dimb5e-singleValue {
@@ -92,13 +134,14 @@
           }
 
           .css-t3ipsp-control {
-            color: $color-light;
+            color           : $color-light;
             background-color: $bg-color-light;
 
             .css-1fdsijx-ValueContainer {
               .css-1dimb5e-singleValue {
                 color: $color-light;
               }
+
               .css-166bipr-Input {
                 color: $color-light;
               }
@@ -112,14 +155,26 @@
               .css-d7l1ni-option {
                 background-color: $hover-color-light;
               }
+
               .css-10wo9uf-option {
                 &:active {
                   background-color: $active-color-light;
                 }
               }
+
               .css-tr4s17-option {
-                color: $color-light;
+                color           : $color-light;
                 background-color: $hover-color-light;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                border-radius   : 4px;
+                background-color: rgba(0, 0, 0, 0.15);
+              }
+            
+              &::-webkit-scrollbar-track {
+                border-radius   : 0;
+                background-color: rgba(0, 0, 0, 0);
               }
             }
           }
@@ -129,6 +184,15 @@
 
     .filter-btn-wrapper {
       .filter-btn {
+        border: 1px solid $border-color-light;
+      }
+    }
+
+    .filter-btn-state {
+      position     : relative;
+      border-bottom: 1px solid $border-color-light;
+
+      .btn-state {
         border: 1px solid $border-color-light;
       }
     }
@@ -160,7 +224,7 @@
           }
 
           .css-13cymwt-control {
-            color: $color-dark;
+            color           : $color-dark;
             background-color: $bg-color-dark;
 
             .css-1dimb5e-singleValue {
@@ -169,13 +233,14 @@
           }
 
           .css-t3ipsp-control {
-            color: $color-dark;
+            color           : $color-dark;
             background-color: $bg-color-dark;
 
             .css-1fdsijx-ValueContainer {
               .css-1dimb5e-singleValue {
                 color: $color-dark;
               }
+
               .css-166bipr-Input {
                 color: $color-dark;
               }
@@ -189,14 +254,24 @@
               .css-d7l1ni-option {
                 background-color: $hover-color-dark;
               }
+
               .css-10wo9uf-option {
                 &:active {
                   background-color: $active-color-dark;
                 }
               }
+
               .css-tr4s17-option {
-                color: $color-dark;
+                color           : $color-dark;
                 background-color: $hover-color-dark;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.15);
+              }
+            
+              &::-webkit-scrollbar-track {
+                background-color: rgba(255, 255, 255, 0);
               }
             }
           }
@@ -209,34 +284,53 @@
         border: 1px solid $border-color-dark;
       }
     }
+
+    .filter-btn-state {
+      position     : relative;
+      border-bottom: 1px solid $border-color-dark;
+
+      .btn-state {
+        border: 1px solid $border-color-dark;
+      }
+    }
+  }
+
+  &.hide {
+    .filter-data {
+      display: none;
+    }
+  
+    .filter-btn-wrapper {
+      display: none;
+    }
   }
 }
 
-// Tablet
-// @media only screen and (min-width: 740px) and (max-width: 1024px) {
+  // Tablet
+  // @media only screen and (min-width: 740px) and (max-width: 1024px) {
 
-// }
+  // }
 
-// Mobile
-@media only screen and (max-width: 740px) {
-  .item-filter {
-    width: $content-inside-width-mobile;
+  // Mobile
+  @media only screen and (max-width: 740px) {
+    .item-filter {
+      width: $content-inside-width-mobile;
 
-    .filter-data {
-      .filter-row {
-        label {
-          width: 30%;
-        }
-  
-        .search-input {
-          width    : 70%;
-          font-size: 18px;
-        }
-  
-        .select-path {
-          width: 70%;
+      .filter-data {
+        .filter-row {
+          label {
+            width: 30%;
+          }
+
+          .search-input {
+            width    : 70%;
+            font-size: 18px;
+          }
+
+          .select-path {
+            width: 70%;
+          }
         }
       }
     }
   }
-}
